@@ -34,6 +34,8 @@ public class BookController {
   @ApiOperation(("获取图书"))
   @GetMapping("/get")
   public Book getBook() {
+    log.info(username);
+    log.info(password);
     return Book.builder().bookName("微服务实战").bookDesc("这是一本关于微服务实战的图书").build();
   }
 }
