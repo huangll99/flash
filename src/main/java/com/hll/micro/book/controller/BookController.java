@@ -5,6 +5,7 @@ import com.hll.micro.book.model.Book;
 import com.hll.micro.book.model.Result;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -15,6 +16,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/book")
 @Slf4j
 public class BookController {
+
+  @Value("${username}")
+  private String username;
+
+  @Value("${password}")
+  private String password;
+
 
   @ApiOperation("图书添加")
   @PostMapping("/add")
